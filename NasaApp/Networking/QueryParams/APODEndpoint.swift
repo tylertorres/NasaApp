@@ -15,7 +15,7 @@ struct APODEndpoint: Endpoint {
     let path = "/planetary/apod"
     
     var url: URL? {
-        var urlComponents = URLComponents(string: baseUrl + path)
+        var urlComponents = URLComponents(url: baseUrl.appendingPathComponent(path), resolvingAgainstBaseURL: false)
         urlComponents?.queryItems = queryParams
         return urlComponents?.url
     }

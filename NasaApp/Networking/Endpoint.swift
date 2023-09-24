@@ -12,7 +12,7 @@ protocol Endpoint {
 }
 
 extension Endpoint {
-    var baseUrl: String {
-        return "https://api.nasa.gov"
+    var baseUrl: URL {
+        return URL(string: "https://api.nasa.gov")!
     }
 }
