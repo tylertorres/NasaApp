@@ -26,6 +26,8 @@
 		2F1B9D642ABF856A0089AAEF /* QueryParamKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D632ABF856A0089AAEF /* QueryParamKey.swift */; };
 		2F1B9D662ABF915F0089AAEF /* APODEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D652ABF915F0089AAEF /* APODEndpoint.swift */; };
 		2F1B9D682ABF93F70089AAEF /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D672ABF93F70089AAEF /* APOD.swift */; };
+		2F1B9D6B2AC0D2AE0089AAEF /* NasaHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D6A2AC0D2AE0089AAEF /* NasaHomeView.swift */; };
+		2F1B9D6D2AC0D3640089AAEF /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D6C2AC0D3640089AAEF /* MenuCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		2F1B9D632ABF856A0089AAEF /* QueryParamKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParamKey.swift; sourceTree = "<group>"; };
 		2F1B9D652ABF915F0089AAEF /* APODEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEndpoint.swift; sourceTree = "<group>"; };
 		2F1B9D672ABF93F70089AAEF /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
+		2F1B9D6A2AC0D2AE0089AAEF /* NasaHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaHomeView.swift; sourceTree = "<group>"; };
+		2F1B9D6C2AC0D3640089AAEF /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,15 +123,15 @@
 		2F1B9D1A2ABF5BF30089AAEF /* NasaApp */ = {
 			isa = PBXGroup;
 			children = (
-				2F1B9D5B2ABF6A7E0089AAEF /* Extensions */,
 				2F1B9D482ABF60700089AAEF /* App */,
+				2F1B9D692AC0D2960089AAEF /* Views */,
+				2F1B9D5B2ABF6A7E0089AAEF /* Extensions */,
 				2F1B9D4F2ABF60F10089AAEF /* Models */,
 				2F1B9D522ABF613E0089AAEF /* Networking */,
 				2F1B9D472ABF60260089AAEF /* Info.plist */,
 				2F1B9D1F2ABF5BF40089AAEF /* Assets.xcassets */,
 				2F1B9D212ABF5BF40089AAEF /* Preview Content */,
 				2F1B9D452ABF5FFA0089AAEF /* DebugConfig.xcconfig */,
-				2F1B9D492ABF60850089AAEF /* NasaView.swift */,
 				2F1B9D4B2ABF60950089AAEF /* NasaViewModel.swift */,
 			);
 			path = NasaApp;
@@ -203,6 +207,16 @@
 				2F1B9D652ABF915F0089AAEF /* APODEndpoint.swift */,
 			);
 			path = QueryParams;
+			sourceTree = "<group>";
+		};
+		2F1B9D692AC0D2960089AAEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F1B9D492ABF60850089AAEF /* NasaView.swift */,
+				2F1B9D6A2AC0D2AE0089AAEF /* NasaHomeView.swift */,
+				2F1B9D6C2AC0D3640089AAEF /* MenuCardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +352,7 @@
 			files = (
 				2F1B9D662ABF915F0089AAEF /* APODEndpoint.swift in Sources */,
 				2F1B9D622ABF85580089AAEF /* QueryParamBuilder.swift in Sources */,
+				2F1B9D6B2AC0D2AE0089AAEF /* NasaHomeView.swift in Sources */,
 				2F1B9D562ABF615E0089AAEF /* Endpoint.swift in Sources */,
 				2F1B9D682ABF93F70089AAEF /* APOD.swift in Sources */,
 				2F1B9D512ABF60F90089AAEF /* NasaError.swift in Sources */,
@@ -349,6 +364,7 @@
 				2F1B9D5D2ABF6A8C0089AAEF /* URLSession+Ext.swift in Sources */,
 				2F1B9D4C2ABF60950089AAEF /* NasaViewModel.swift in Sources */,
 				2F1B9D642ABF856A0089AAEF /* QueryParamKey.swift in Sources */,
+				2F1B9D6D2AC0D3640089AAEF /* MenuCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
