@@ -16,21 +16,27 @@ struct NasaHomeView: View {
     ]
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                HStack(spacing: 20) {
-                    ForEach(menuItems, id: \.self) { sectionTitle in
-                        MenuCardView(title: sectionTitle)
+        NavigationStack {
+            
+            GeometryReader { geometry in
+                VStack {
+                    HStack(spacing: 20) {
+                        ForEach(menuItems, id: \.self) { sectionTitle in
+                            NavigationLink(destination: NasaAPODView()) {
+                                MenuCardView(title: sectionTitle)
+                            }
+                        }
                     }
+                    .frame(height: geometry.size.height / 5)
+                    .padding()
+                    
+                    Spacer()
                 }
-                .frame(height: geometry.size.height / 5)
-                .padding()
-                
-                Spacer()
             }
+            .navigationTitle("NASA Home")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
-    
 }
 
 struct NasaHomeView_Previews: PreviewProvider {
