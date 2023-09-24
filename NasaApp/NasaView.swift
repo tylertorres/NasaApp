@@ -13,10 +13,11 @@ struct NasaView: View {
     
     var body: some View {
         VStack {
-            
+            Image(uiImage: viewModel.image ?? UIImage())
+                .resizable()
+                .frame(width: 150, height: 150)
         }
         .onAppear { viewModel.fetchAPOD() }
-        
     }
 }
 

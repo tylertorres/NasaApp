@@ -30,6 +30,15 @@ class NasaNetworkService: NetworkService {
             .eraseToAnyPublisher()
     }
     
+    
+    func fetchImageData(from url: URL) -> AnyPublisher<Data, NasaError> {
+        let request = URLRequest(url: url)
+        
+        return urlSession.execute(request)
+            .mapError(handleNetworkError)
+            .eraseToAnyPublisher()
+    }
+    
     private func handleNetworkError(_ error: Error) -> NasaError {
         
         if let error = error as? URLError {

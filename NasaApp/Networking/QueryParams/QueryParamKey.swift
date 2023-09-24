@@ -14,4 +14,5 @@ enum QueryParamKey: String {
     case endDate = "end_date"
     case count
     case thumbs
+    case date
 }
