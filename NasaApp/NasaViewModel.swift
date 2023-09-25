@@ -47,15 +47,27 @@ class NasaViewModel: ObservableObject {
                     print(error.localizedDescription)
                 }
             } receiveValue: { [weak self] apod in
-                self?.apod = apod
-                
-                if let url = URL(string: apod.url) {
-                    self?.loadImage(from: url)
-                }
+                guard let self else { return }
+                self.apod = apod
+                self.handleMedia(apod)
             }
             .store(in: &cancellables)
         
     }
+    
+    private func handleMedia(_ apod: APOD) {
+        
+        if let urlString = apod.thumbnailUrl, let thumbnailUrl = URL(string: urlString) {
+            print("Fetching thumbnail from video")
+            loadImage(from: thumbnailUrl)
+        } else {
+            guard let imageUrl = URL(string: apod.url) else { return }
+            print("Fetching image...")
+            loadImage(from: imageUrl)
+        }
+        
+    }
+    
     
     private func loadImage(from url: URL) {
         networkService.fetchImageData(from: url)
@@ -63,7 +75,7 @@ class NasaViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
-                    break
+                    print("Successfully fetched image!")
                 case .failure(let error):
                     print("Something went wrong when fetching image: \(error.localizedDescription)")
                 }
@@ -76,7 +88,8 @@ class NasaViewModel: ObservableObject {
     private func createQueryParams() -> [URLQueryItem] {
         var queryParamBuilder = QueryParamBuilder()
         queryParamBuilder.add(key: .apiKey, value: apiKey)
-        queryParamBuilder.add(key: .date, value: "2023-09-23")
+        queryParamBuilder.add(key: .thumbs, value: "true") // always set to true since in the api they ignore this if it is a imagef
+        queryParamBuilder.add(key: .date, value: "2023-09-25")
         return queryParamBuilder.build()
     }
     

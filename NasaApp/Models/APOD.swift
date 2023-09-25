@@ -17,11 +17,16 @@ struct APOD: Codable {
     let hdUrl: String?
     let mediaType: String?
     let serviceVersion: String?
+    let thumbnailUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case title, url, explanation, copyright, date
         case hdUrl = "hdurl"
         case mediaType = "media_type"
         case serviceVersion = "service_version"
+        case thumbnailUrl = "thumbnail_url"
     }
+    
+    
+    
 }

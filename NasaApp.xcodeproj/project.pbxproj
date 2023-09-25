@@ -28,6 +28,7 @@
 		2F1B9D682ABF93F70089AAEF /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D672ABF93F70089AAEF /* APOD.swift */; };
 		2F1B9D6B2AC0D2AE0089AAEF /* NasaHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D6A2AC0D2AE0089AAEF /* NasaHomeView.swift */; };
 		2F1B9D6D2AC0D3640089AAEF /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D6C2AC0D3640089AAEF /* MenuCardView.swift */; };
+		2F1B9D6F2AC209F60089AAEF /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9D6E2AC209F60089AAEF /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		2F1B9D672ABF93F70089AAEF /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		2F1B9D6A2AC0D2AE0089AAEF /* NasaHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaHomeView.swift; sourceTree = "<group>"; };
 		2F1B9D6C2AC0D3640089AAEF /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
+		2F1B9D6E2AC209F60089AAEF /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				2F1B9D492ABF60850089AAEF /* NasaAPODView.swift */,
 				2F1B9D6A2AC0D2AE0089AAEF /* NasaHomeView.swift */,
 				2F1B9D6C2AC0D3640089AAEF /* MenuCardView.swift */,
+				2F1B9D6E2AC209F60089AAEF /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				2F1B9D622ABF85580089AAEF /* QueryParamBuilder.swift in Sources */,
 				2F1B9D6B2AC0D2AE0089AAEF /* NasaHomeView.swift in Sources */,
 				2F1B9D562ABF615E0089AAEF /* Endpoint.swift in Sources */,
+				2F1B9D6F2AC209F60089AAEF /* TestView.swift in Sources */,
 				2F1B9D682ABF93F70089AAEF /* APOD.swift in Sources */,
 				2F1B9D512ABF60F90089AAEF /* NasaError.swift in Sources */,
 				2F1B9D5A2ABF6A2F0089AAEF /* NetworkSession.swift in Sources */,
