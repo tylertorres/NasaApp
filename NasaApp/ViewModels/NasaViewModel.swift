@@ -58,7 +58,6 @@ class NasaViewModel: ObservableObject {
     
     private func handleApod(_ apod: APOD) {
         var apodDisplay = APODDisplay(apod: apod, image: nil, isVideo: false)
-        apodDisplay.apod = apod
         
         if let urlString = apod.thumbnailUrl, let thumbnailUrl = URL(string: urlString) {
             print("Fetching thumbnail from video...")
@@ -66,6 +65,7 @@ class NasaViewModel: ObservableObject {
             loadImage(from: thumbnailUrl)
         } else {
             guard let imageUrl = URL(string: apod.url) else { return }
+            apodDisplay.isVideo = true
             print("Fetching image...")
             loadImage(from: imageUrl)
         }
@@ -94,7 +94,7 @@ class NasaViewModel: ObservableObject {
         var queryParamBuilder = QueryParamBuilder()
         queryParamBuilder.add(key: .apiKey, value: apiKey)
         queryParamBuilder.add(key: .thumbs, value: "true") // always set to true since in the api they ignore this if it is a imagef
-        queryParamBuilder.add(key: .date, value: "2023-09-24")
+        queryParamBuilder.add(key: .date, value: "2023-09-25")
         return queryParamBuilder.build()
     }
     
