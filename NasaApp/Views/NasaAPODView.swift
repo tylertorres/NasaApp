@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+
 
 struct NasaAPODView: View {
     
@@ -21,9 +23,15 @@ struct NasaAPODView: View {
                         .scaledToFill()
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.5)
                         .clipShape(RoundedRectangle(cornerRadius: 25))
-//                        .overlay(
-//                            if viewModel.image.
-//                        )
+                        .overlay(overlayPlayButton)
+                        .onTapGesture {
+                            if viewModel.apodDisplay?.isVideo == true,
+                               let videoUrlStr = viewModel.apodDisplay?.apod.url,
+                               let url = URL(string: videoUrlStr) {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                    
                 } else {
                     // Placeholder for when the image is nil or loading
                     Rectangle()
@@ -45,6 +53,17 @@ struct NasaAPODView: View {
         .onAppear { viewModel.fetchAPOD() }
         .navigationTitle(viewModel.apodDisplay?.apod.title ?? "Title")
         .navigationBarTitleDisplayMode(.large)
+    }
+    
+    private var overlayPlayButton: some View {
+        Group {
+            if viewModel.apodDisplay?.isVideo == true {
+                Image(systemName: "play.fill")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
 

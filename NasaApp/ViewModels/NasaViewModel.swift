@@ -11,10 +11,7 @@ import UIKit
 import SwiftUI
 
 class NasaViewModel: ObservableObject {
-    
-    @Published var apod: APOD?
-    @Published var image: UIImage?
-    
+
     @Published var apodDisplay: APODDisplay?
     
     private var cancellables = Set<AnyCancellable>()
@@ -65,7 +62,7 @@ class NasaViewModel: ObservableObject {
             loadImage(from: thumbnailUrl)
         } else {
             guard let imageUrl = URL(string: apod.url) else { return }
-            apodDisplay.isVideo = true
+            apodDisplay.isVideo = false
             print("Fetching image...")
             loadImage(from: imageUrl)
         }
@@ -93,8 +90,8 @@ class NasaViewModel: ObservableObject {
     private func createQueryParams() -> [URLQueryItem] {
         var queryParamBuilder = QueryParamBuilder()
         queryParamBuilder.add(key: .apiKey, value: apiKey)
-        queryParamBuilder.add(key: .thumbs, value: "true") // always set to true since in the api they ignore this if it is a imagef
-        queryParamBuilder.add(key: .date, value: "2023-09-25")
+        queryParamBuilder.add(key: .thumbs, value: "true") // always set to true since in the api they ignore this if it is a image
+        queryParamBuilder.add(key: .date, value: "2023-09-24")
         return queryParamBuilder.build()
     }
     
